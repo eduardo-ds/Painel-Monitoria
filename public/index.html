@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- Bootstrap -->
+
+    <title>Página inicial</title>
+</head>
+
+<body>
+
+    <div ng-controller="homeController">
+        <div class="container">
+            <h1 class="text-center">Bem Vindo!</h1>
+            <table class="table">
+                <thead>
+                    <th>
+                        Nome
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="u in lista">
+                        <td>
+                            {{ u.Nome}}
+                        </td>
+                        <td>{{ u.Descricao }}</td>
+                        <td>
+                            <button ng-if="u.Ativo == 'sim'" type="button" class="btn btn-success">Success</button>
+                            <button ng-if="u.Ativo == 'nao'" type="button" class="btn btn-danger">Danger</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- AngularJS -->
+    <script src="assets/angular.min.js"></script>
+
+    <!--Rotas Url-->
+    <script src="assets/angular-route.min.js"></script>
+
+    <!-- AngularJS -->
+
+    <!-- Modulo Principal -->
+    <script src="app/modules/app.module.js"></script>
+
+    <!-- Constants-->
+    <script src="app/constants/app.constants.js"></script>
+    <!-- Services -->
+    <script src="app/services/homeService.js"></script>
+
+    <!-- Custom Javascripts -->
+
+    <script>
+    </script>
+</body>
+
+</html>
